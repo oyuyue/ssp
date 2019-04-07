@@ -1,0 +1,34 @@
+html {
+  height: 100%;
+  font-size: 10px;
+  font-family: Roboto, 'source-han-sans-simplified-c', 'Microsoft JhengHei', '-apple-system', BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  padding: 3rem;
+  font-size: $font-size-default;
+  box-sizing: border-box;
+  background: $color-white;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+img {
+  display: inline-block;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
