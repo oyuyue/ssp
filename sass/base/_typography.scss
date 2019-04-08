@@ -1,0 +1,15 @@
+body {
+  font-size: $font-size-default;
+  font-family: Roboto, 'source-han-sans-simplified-c', 'Microsoft JhengHei', '-apple-system', BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+
+  
+}

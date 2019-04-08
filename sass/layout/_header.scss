@@ -17,4 +17,10 @@
     top: 3rem;
     left: 3rem;
   }
+
+  &__text-box {
+    @include absCenter(40%);
+    text-align: center;
+  }
+
 }
