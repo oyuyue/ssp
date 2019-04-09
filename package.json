@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node-sass-chokidar sass/main.scss css/style.css --watch --recursive --use-polling --polling-interval 1500",
+    "start": "node-sass-chokidar sass/main.scss css/style.css --watch --recursive --use-polling --polling-interval 2000",
     "dev": "live-server"
   },
   "keywords": [],

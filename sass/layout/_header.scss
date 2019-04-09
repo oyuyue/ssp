@@ -18,6 +18,10 @@
     left: 3rem;
   }
 
+  &__logo {
+    height: 3.5rem;
+  }
+
   &__text-box {
     @include absCenter(40%);
     text-align: center;
