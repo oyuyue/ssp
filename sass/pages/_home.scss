@@ -1,0 +1,45 @@
+.section-about {
+  margin-top: -20vh;
+  padding: 25rem 0;
+  background: $color-grey-3;
+
+  &__img-box {
+    position: relative;
+
+    &:hover &-img:not(:hover) {
+      transform: scale(.9);
+    }
+
+    &-img {
+      width: 50%;
+      position: absolute;
+      border-radius: 2px;
+      box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+      z-index: 10;
+      outline-offset: 2rem;
+      transition: all 0.2s;
+
+      &--1 {
+        left: 0;
+        margin-left: 20%;
+      }
+
+      &--2 {
+        right: 0;
+        margin-top: 5%;
+      }
+
+      &--3 {
+        margin-top: 20%;
+        margin-left: 35%;
+      }
+
+      &:hover {
+        outline: 1.5rem solid $color-primary;
+        transform: scale(1.05) translateY(-0.5rem);
+        box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+        z-index: 20;
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.row {
+  display: block;
+  max-width: $grid-width;
+  margin: 0 auto;
+  letter-spacing: -0.31em;
+  word-spacing: -0.43em;
+
+  [class^="col-"] {
+    display: inline-block;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+  }
+
+  .col-1-of-2 {
+    width: 50%;
+  }
+
+  .col-1-of-3 {
+    width: 33.33333%;
+  }
+
+  .col-2-of-3 {
+    width: 66.66666%;
+  }
+}

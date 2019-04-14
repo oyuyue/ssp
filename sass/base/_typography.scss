@@ -1,4 +1,5 @@
 body {
+  line-height: 1.7;
   font-size: $font-size-default;
   font-family: Roboto, 'source-han-sans-simplified-c', 'Microsoft JhengHei',
     '-apple-system', BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
@@ -9,6 +10,7 @@ body {
 }
 
 .heading-primary {
+  font-weight: bold;
   color: $color-white;
   text-transform: uppercase;
   backface-visibility: hidden;
@@ -25,5 +27,40 @@ body {
     font-size: 2rem;
     letter-spacing: 1.5rem;
     animation: moveInRight 1s ease-out;
+  }
+}
+
+.heading-secondary {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+  }
+}
+
+.heading-tertiary {
+  font-size: $font-size-default;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: $font-size-default;
+
+  &:not(:last-child) {
+      margin-bottom: 3rem;
   }
 }
