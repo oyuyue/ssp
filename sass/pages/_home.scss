@@ -7,7 +7,7 @@
     position: relative;
 
     &:hover &-img:not(:hover) {
-      transform: scale(.9);
+      transform: scale(0.9);
     }
 
     &-img {
@@ -41,5 +41,21 @@
         z-index: 20;
       }
     }
+  }
+}
+
+.section-features {
+  margin-top: -10rem;
+  padding: 20rem 0;
+  background: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/nat-4.jpg) 0 0 / cover;
+  transform: skewY(-7deg);
+
+  & > * {
+    transform: skewY(7deg);
   }
 }
