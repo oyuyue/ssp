@@ -771,6 +771,43 @@ body {
     transform: translate(-50%, -50%);
     text-align: center; }
 
+.footer {
+  padding: 10rem 0;
+  font-size: 1.4rem;
+  color: #fafafa;
+  background-color: #333; }
+  .footer__logo-box {
+    text-align: center;
+    margin-bottom: 8rem; }
+  .footer__logo {
+    width: 15rem; }
+  .footer__navigation {
+    display: inline-block;
+    padding-top: 2rem;
+    border-top: 1px solid #9e9e9e; }
+  .footer__list {
+    list-style: none; }
+  .footer__item {
+    display: inline-block; }
+    .footer__item:not(:last-child) {
+      margin-right: 1.5rem; }
+  .footer__link:link, .footer__link:visited {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fafafa;
+    background-color: #333;
+    transition: all 0.2s; }
+  .footer__link:hover, .footer__link:active {
+    color: #55c57a;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    transform: rotate(5deg) scale(1.3); }
+  .footer__copyright {
+    width: 80%;
+    padding-top: 2rem;
+    border-top: 1px solid #9e9e9e;
+    float: right; }
+
 .row {
   display: block;
   max-width: 114rem;
