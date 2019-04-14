@@ -20,12 +20,14 @@
           <p class="heading-primary--main">标题文字</p>
           <p class="heading-primary--sub">这里是子标题文字区域</p>
         </h1>
-        <a href="#" class="btn btn--white btn--animated">现在订购</a>
+        <a href="#section-tours" class="btn btn--white btn--animated"
+          >现在订购</a
+        >
       </div>
     </header>
     <main>
       <section class="section-about">
-        <div class="u-text-center u-margin-bottom-big">
+        <div class="u-text-center u-margin-bottom-big" id="section-about">
           <h2 class="heading-secondary">
             EXCITING TOURS FOR ADVENTUROUS PEOPLE
           </h2>
@@ -68,7 +70,7 @@
         </div>
       </section>
 
-      <section class="section-features">
+      <section class="section-features" id="section-features">
         <div class="row">
           <div class="col-1-of-4">
             <div class="feature-box">
@@ -122,7 +124,7 @@
       </section>
 
       <section class="section-tours">
-        <div class="u-text-center u-margin-bottom-big">
+        <div class="u-text-center u-margin-bottom-big" id="section-tours">
           <h2 class="heading-secondary">
             Most popular tours
           </h2>
@@ -224,7 +226,7 @@
         </div>
       </section>
 
-      <section class="section-stories">
+      <section class="section-stories" id="section-stories">
         <div class="bg-video">
           <video class="bg-video__content" autoplay muted loop>
             <source src="img/video.mp4" type="video/mp4" />
@@ -290,7 +292,7 @@
         </div>
       </section>
 
-      <section class="section-book">
+      <section class="section-book" id="section-book">
         <div class="book">
           <div class="book__form">
             <form action="#" class="form">
@@ -357,6 +359,7 @@
         </div>
       </section>
     </main>
+
     <footer class="footer">
       <div class="footer__logo-box">
         <picture class="footer__logo">
@@ -413,24 +416,67 @@
       <nav class="navigation__nav">
         <ul class="navigation__list">
           <li class="navigation__item">
-            <a href="#" class="navigation__link"><span>01</span>About Natous</a>
+            <a href="#section-about" class="navigation__link"
+              ><span>01</span>About Natous</a
+            >
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link"><span>02</span>Your benfits</a>
+            <a href="#section-features" class="navigation__link"
+              ><span>02</span>Your benfits</a
+            >
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link"
+            <a href="#section-tours" class="navigation__link"
               ><span>03</span>Popular tours</a
             >
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link"><span>04</span>Stories</a>
+            <a href="#section-stories" class="navigation__link"
+              ><span>04</span>Stories</a
+            >
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link"><span>05</span>Book now</a>
+            <a href="#section-book" class="navigation__link"
+              ><span>05</span>Book now</a
+            >
           </li>
         </ul>
       </nav>
+    </div>
+
+    <div class="popup" id="popup">
+      <div class="popup__content">
+        <div class="popup__left">
+          <img src="img/nat-8.jpg" alt="Tour photo" class="popup__img" />
+          <img src="img/nat-9.jpg" alt="Tour photo" class="popup__img" />
+        </div>
+        <div class="popup__right">
+          <a href="#section-tours" class="popup__close">&times;</a>
+          <h2 class="heading-secondary u-margin-bottom-small">
+            Start booking now
+          </h2>
+          <h3 class="heading-tertiary u-margin-bottom-small">
+            Important &ndash; Please read these terms before booking
+          </h3>
+          <p class="popup__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed sed
+            risus pretium quam. Aliquam sem et tortor consequat id. Volutpat
+            odio facilisis mauris sit amet massa vitae. Mi bibendum neque
+            egestas congue. Placerat orci nulla pellentesque dignissim enim sit.
+            Vitae semper quis lectus nulla at volutpat diam ut venenatis.
+            Malesuada pellentesque elit eget gravida cum sociis natoque
+            penatibus et. Proin fermentum leo vel orci porta non pulvinar neque
+            laoreet. Gravida neque convallis a cras semper. Molestie at
+            elementum eu facilisis sed odio morbi quis. Faucibus vitae aliquet
+            nec ullamcorper sit amet risus nullam eget. Nam libero justo laoreet
+            sit. Amet massa vitae tortor condimentum lacinia quis vel eros
+            donec. Sit amet facilisis magna etiam. Imperdiet sed euismod nisi
+            porta.
+          </p>
+          <a href="#section-tours" class="btn btn--primary">Book now</a>
+        </div>
+      </div>
     </div>
   </body>
 </html>
