@@ -4,10 +4,24 @@
   margin: 0 auto;
   letter-spacing: -0.31em;
 
-  [class^="col-"] {
+  [class^='col-'] {
     display: inline-block;
     letter-spacing: normal;
     vertical-align: top;
+
+    @include respond(tab-port) {
+      width: 100% !important;
+    }
+  }
+
+  @include respond(tab-port) {
+    max-width: 70%;
+    padding: 0 3rem;
+  }
+
+  @include respond(phone) {
+    max-width: 100%;
+    padding: 0 .1rem;
   }
 
   .col-1-of-2 {
@@ -25,5 +39,4 @@
   .col-1-of-4 {
     width: 25%;
   }
-
 }

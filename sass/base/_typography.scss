@@ -22,12 +22,22 @@ body {
     letter-spacing: 3.5rem;
     text-indent: 1.8rem;
     animation: moveInLeft 1s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      text-indent: 1rem;
+      font-size: 4rem;
+    }
   }
 
   &--sub {
-    font-size: 2rem;
+    font-size: 1.6rem;
     letter-spacing: 1.5rem;
     animation: moveInRight 1s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 0.25rem;
+    }
   }
 }
 
@@ -62,6 +72,6 @@ body {
   font-size: $font-size-default;
 
   &:not(:last-child) {
-      margin-bottom: 3rem;
+    margin-bottom: 3rem;
   }
 }

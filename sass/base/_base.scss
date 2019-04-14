@@ -1,12 +1,30 @@
 html {
   height: 100%;
   font-size: 10px;
+
+  @include respond(tab-land) {
+    // width < 1200?
+    font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+  }
+
+  @include respond(tab-port) {
+    // width < 900?
+    font-size: 50%; //1 rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12, 12/16
+  }
 }
 
 body {
   padding: 3rem;
   box-sizing: border-box;
   background: $color-white;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }
 
 *,
@@ -21,7 +39,10 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(rgba($color-primary-light, .8), rgba($color-primary-dark, .8));
+  background: linear-gradient(
+    rgba($color-primary-light, 0.8),
+    rgba($color-primary-dark, 0.8)
+  );
   border-radius: 20px;
 }
 ::-webkit-scrollbar-track {

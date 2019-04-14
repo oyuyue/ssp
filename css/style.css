@@ -303,14 +303,37 @@ template {
 [hidden] {
   display: none; }
 
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px
+*/
 html {
   height: 100%;
   font-size: 10px; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
 
 body {
   padding: 3rem;
   box-sizing: border-box;
   background: #fff; }
+  @media only screen and (max-width: 56.25em) {
+    body {
+      padding: 0; } }
 
 *,
 *::before,
@@ -377,10 +400,18 @@ body {
     letter-spacing: 3.5rem;
     text-indent: 1.8rem;
     animation: moveInLeft 1s ease-out; }
+    @media only screen and (max-width: 37.5em) {
+      .heading-primary--main {
+        letter-spacing: 1rem;
+        text-indent: 1rem;
+        font-size: 4rem; } }
   .heading-primary--sub {
-    font-size: 2rem;
+    font-size: 1.6rem;
     letter-spacing: 1.5rem;
     animation: moveInRight 1s ease-out; }
+    @media only screen and (max-width: 37.5em) {
+      .heading-primary--sub {
+        letter-spacing: 0.25rem; } }
 
 .heading-secondary {
   display: inline-block;
@@ -618,6 +649,35 @@ body {
   .card__price-value {
     font-size: 6rem;
     font-weight: 100; }
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
+    .card {
+      height: auto;
+      margin-bottom: 2rem;
+      border-radius: 3px;
+      background-color: #fff;
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+      .card__side {
+        height: auto;
+        position: relative;
+        box-shadow: none; }
+        .card__side--back {
+          transform: rotateY(0);
+          clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%); }
+      .card:hover .card__side--front {
+        transform: rotateY(0); }
+      .card__details {
+        padding: 1rem 3rem; }
+      .card__cta {
+        position: relative;
+        top: 0%;
+        left: 0;
+        transform: translate(0);
+        width: 100%;
+        padding: 7rem 4rem 4rem 4rem; }
+      .card__price-box {
+        margin-bottom: 3rem; }
+      .card__price-value {
+        font-size: 4rem; } }
 
 .bg-video {
   position: absolute;
@@ -644,17 +704,37 @@ body {
   background-color: rgba(255, 255, 255, 0.6); }
   .story:not(:last-child) {
     margin-bottom: 8rem; }
+  @media only screen and (max-width: 56.25em) {
+    .story {
+      width: 95%;
+      padding: 4rem;
+      padding-left: 7rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .story {
+      transform: skewX(0); } }
   .story__shape {
     position: relative;
     width: 15rem;
     height: 15rem;
     float: left;
     border-radius: 50%;
-    shape-outside: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
     overflow: hidden; }
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      .story__shape {
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        border-radius: none; } }
+    @media only screen and (max-width: 37.5em) {
+      .story__shape {
+        transform: translateX(-3rem) skewX(0); } }
   .story__text {
     transform: skewX(12deg); }
+    @media only screen and (max-width: 37.5em) {
+      .story__text {
+        transform: skewX(0); } }
   .story__img {
     height: 100%;
     transform: translateX(-4rem) scale(1.4);
@@ -694,6 +774,9 @@ body {
   border: none;
   border-bottom: 3px solid transparent;
   transition: all 0.3s; }
+  @media only screen and (max-width: 56.25em) {
+    .form__input {
+      width: 100%; } }
   .form__input:focus {
     outline: none;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
@@ -719,6 +802,10 @@ body {
 .form__radio-group {
   width: 49%;
   display: inline-block; }
+  @media only screen and (max-width: 56.25em) {
+    .form__radio-group {
+      width: 100%;
+      margin-bottom: 2rem; } }
 
 .form__radio-input {
   display: none; }
@@ -826,10 +913,18 @@ body {
 .header {
   position: relative;
   height: 95vh;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero-small.jpg");
   background-size: cover;
   background-position: center; }
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    .header {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+      height: 95vh; } }
+  @media only screen and (max-width: 37.5em) {
+    .header {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } }
   .header__logo-box {
     position: absolute;
     top: 3rem;
@@ -848,15 +943,26 @@ body {
   font-size: 1.4rem;
   color: #fafafa;
   background-color: #212121; }
+  @media only screen and (max-width: 56.25em) {
+    .footer {
+      padding: 8rem 0; } }
   .footer__logo-box {
     text-align: center;
     margin-bottom: 8rem; }
+    @media only screen and (max-width: 56.25em) {
+      .footer__logo-box {
+        margin-bottom: 6rem; } }
   .footer__logo {
     width: 15rem; }
   .footer__navigation {
     display: inline-block;
     padding-top: 2rem;
     border-top: 1px solid #9e9e9e; }
+    @media only screen and (max-width: 56.25em) {
+      .footer__navigation {
+        display: block;
+        text-align: center;
+        margin-bottom: 6rem; } }
   .footer__list {
     list-style: none; }
   .footer__item {
@@ -879,16 +985,32 @@ body {
     padding-top: 2rem;
     border-top: 1px solid #9e9e9e;
     float: right; }
+    @media only screen and (max-width: 56.25em) {
+      .footer__copyright {
+        width: 100%;
+        float: none;
+        text-align: center; } }
 
 .row {
   display: block;
   max-width: 114rem;
   margin: 0 auto;
   letter-spacing: -0.31em; }
-  .row [class^="col-"] {
+  .row [class^='col-'] {
     display: inline-block;
     letter-spacing: normal;
     vertical-align: top; }
+    @media only screen and (max-width: 56.25em) {
+      .row [class^='col-'] {
+        width: 100% !important; } }
+  @media only screen and (max-width: 56.25em) {
+    .row {
+      max-width: 70%;
+      padding: 0 3rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .row {
+      max-width: 100%;
+      padding: 0 .1rem; } }
   .row .col-1-of-2 {
     width: 50%; }
   .row .col-1-of-3 {
@@ -913,6 +1035,14 @@ body {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
   z-index: 2000;
   cursor: pointer; }
+  @media only screen and (max-width: 56.25em) {
+    .navigation__button {
+      top: 4rem;
+      right: 4rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .navigation__button {
+      top: 3rem;
+      right: 3rem; } }
 
 .navigation__background {
   position: fixed;
@@ -924,6 +1054,14 @@ body {
   background-image: radial-gradient(#7ed56f, #28b485);
   z-index: 1000;
   transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1); }
+  @media only screen and (max-width: 56.25em) {
+    .navigation__background {
+      top: 4.5rem;
+      right: 4.5rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .navigation__background {
+      top: 3.5rem;
+      right: 3.5rem; } }
 
 .navigation__nav {
   position: fixed;
@@ -1027,15 +1165,38 @@ body {
       z-index: 10;
       outline-offset: 2rem;
       transition: all 0.2s; }
+      @media only screen and (max-width: 56.25em) {
+        .section-about__img-box-img {
+          position: relative;
+          float: left;
+          width: 33.33333333%;
+          margin-top: 5rem !important;
+          box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); } }
       .section-about__img-box-img--1 {
         left: 0;
         margin-left: 20%; }
+        @media only screen and (max-width: 56.25em) {
+          .section-about__img-box-img--1 {
+            top: 1rem;
+            margin-left: 0;
+            transform: scale(1.2); } }
       .section-about__img-box-img--2 {
         right: 0;
         margin-top: 5%; }
+        @media only screen and (max-width: 56.25em) {
+          .section-about__img-box-img--2 {
+            top: -1rem;
+            transform: scale(1.3);
+            z-index: 100; } }
       .section-about__img-box-img--3 {
         margin-top: 20%;
         margin-left: 35%; }
+        @media only screen and (max-width: 56.25em) {
+          .section-about__img-box-img--3 {
+            top: 1rem;
+            right: 0;
+            margin: 0;
+            transform: scale(1.1); } }
       .section-about__img-box-img:hover {
         outline: 1.5rem solid #55c57a;
         transform: scale(1.05) translateY(-0.5rem);
@@ -1062,6 +1223,9 @@ body {
 .section-book {
   padding: 15rem 0;
   background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+  @media only screen and (max-width: 56.25em) {
+    .section-book {
+      padding: 10rem 0; } }
 
 .book {
   width: 80%;
@@ -1070,6 +1234,18 @@ body {
   background-size: cover;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2); }
+  @media only screen and (max-width: 75em) {
+    .book {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(../img/nat-10.jpg); } }
+  @media only screen and (max-width: 56.25em) {
+    .book {
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-10.jpg); } }
   .book__form {
     width: 50%;
     padding: 6rem; }
+    @media only screen and (max-width: 75em) {
+      .book__form {
+        width: 65%; } }
+    @media only screen and (max-width: 56.25em) {
+      .book__form {
+        width: 100%; } }
